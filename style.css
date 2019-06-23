@@ -1,4 +1,3 @@
-
 *{
 	padding: 0px;
 	margin:0px;
@@ -11,267 +10,250 @@ ul,ol,li{
 a{
 	text-decoration: none;
 }
-.bigbig{
-	margin: 0px  auto;
-	width: 1500px;
-	height: 1500px;
-
+.all{
+	margin: 0px auto;
 }
 .bighead{
+	height: 190px;
+	width: 100%;
+	border-bottom: 3px solid #3aa747;
+}
+.aaa{
 	margin: 0px auto;
 	height: 190px;
-	
-
-	
-}
-.head1{
-	height: 30px;
-	
-	
-	background-color: #f4f4f4;
-
-}
-.head1 img{
-	margin-top: 1px;
-	float: right;
-
-
-}
-.head11{
-	line-height: 30px;
-	margin-left: 80px;
-	float: left ;
+	width: 1196px;
 	
 }
-
-.head12{
-	margin-right: 80px;
-	float:right;
-}
-.head12 a{
-	color: black;
-}
-.head2{
-	height: 120px;
-	border: 1px solid white;
-	
-
-	
-}
-.head2 img{
-
-	margin-left: 80px;
-	float: left;
-	
-	
-}
-.head21{
-	margin-left: 200px;
-	margin-top: 40px;
-	width: 500px;
-	border: 2px #f83838 solid;
-	background-color:#f83838 ;
-	float: left;
-	
-}
-.head21 a{
-	margin-left: 30px;
-	font-size: 15px;
-	color: white;
-}
-.head22{
-	margin-left: 1100px;
-	margin-top: 40px;
-	width: 145px;
-	height: 40px;
-	border: 1px solid #e3e3e3;
-	background-color:#f5f5f5;
-	
-
-}
-.head22 img{
-	margin-left: 25px;
-	margin-top: 8px;
-	float: left;
-	
-}
-.head22 a{
-	line-height: 40px;
-	
-}
-.head22 span{
-	color: #f27878;
-	
-}
-
-.head3{
-	height: 35px;
-	border-bottom: 3px solid #e00304;
-	
-}
-.head3 p{
-	margin-top: 10px;
-	margin-left: 80px;
-	
-	
-}
-.head3 a{ 
-	float: left;
-	width: 90px;
-
-	margin-left: 60px;
-	position: relative;
-}
-.hide{
+.abovehead{
+	height: 36px;
 	width: 100%;
-	text-align: center;
-	border-radius:10% ;
-	color: white;
-	background-color:#fd0304 ;
-	position: absolute;
-	top: 0px;
-	display: none;
 	
 }
-.head3 a:hover .hide{
-	display: block;
+.abovehead a{
+	color: black;
+	font-size: 13px;
+}
+.abovehead p{
+	margin-top: 8px;
+	float: right;
+}
+.abovehead span{
+	margin-left: 40px;
+}
+.abovehead img{
+	margin-right: 5px;
+	margin-top: 5px;
+	float: right;
+}
+.middlehead{
+	height: 111px;
+	width: 100%;
+	
+}
+.input{
+	height: 45px;
+	width: 600px;
+	border:1px solid black;
+	margin-left: 175px;
+	float: left;
+	margin-top:20px ;
+	
+}
+.photo1{
+	float: left;
+	margin-top: 20px;
+
+}
+.photo2{
+	float: right;
+	margin-top: 30px;
+
 }
 
+.tailhead{
 
+	height: 38px;
+	width: 100%;
+	
 
-
-.bigbody{
+}
+.tailhead select{
 	margin-top: 10px;
-	height: 640px;
-	background-color:#fbfbfb ;
+	float: left;
+}
+.tailhead a{
+	float: left;
+	line-height: 38px;
+	height: 38px;
+	margin-left: 60px;
+	color: black;
+
+}
+
+.tailhead a:hover{
+
+	border-bottom:5px solid #3aa747 ;
+	
+}
+.banner{
 	margin: 0px auto;
-	
-	
+	width: 1919px;
+	height: 674px;
 }
 .body1{
-	height: 65px;
+	margin: 0px auto;
+	height: 50px;
 	width: 1200px;
-	margin-left: 80px;
-	border:1px solid white ;
-	line-height: 65px;
-	font-size: 17px;
-	
-}
+	border: 1px solid white;
 
+}
+.body1 span{
+	line-height: 50px;
+}
 .body2{
-	height: 565px;
-	width: 215px;
-	margin-left: 80px;
-	border: 1px solid white;
-	float: left;
-}
-.body21{
-	height: 41px;
-	margin-bottom: 8px;
-	background-color: white;
-
-	
-	border: 1px solid white;
-}
-.body21 span{
-	line-height: 41px;
-	margin-left: 15px;
-}
-.body21 img{
-	margin-top: 4px;
-	margin-left: 30px;
-	float: left;
-
-}
-.body22{
-	height: 514px;
-	border: 1px solid white;
-	background-color: white;
-}
-.body22 p{
-	margin-top: 22px;
-	margin-left: 80px;
-}
-.body22 a{
-	color: black;
-}
-.body22 a:hover{
-	color: #ff6456;
-}
-
-
-.body3{
-	width: 970px;
-	border: 1px solid white;
-	margin-left: 14px;
-	height: 565px;
-	float: left;
-	background-color: white;
-}
-.body3 ul li{
-	margin: 12px;
-	width: 215px;
-	height: 250px;
-	border: 1px solid #dbdbdb;
-	float: left;
-}
-.ziti{
-	color: #cecece;
-}
-.body3 ul li p{
-	margin-top: 10px;
-}
-.bigtail{
-	height: 240px;
-	border: 1px solid #2e2e2e;
-	background-color: #2e2e2e;
+	height: 134px;
+	width: 1200px;
+	border-right: 1px solid #cccccc;
 	margin: 0px auto;
 }
-.tail1{
-	height: 150px;
-	width: 1200px;
-	border-bottom:1px solid #434242;
-	margin-left:80px;
+.body2 div{
+	height: 42px;
+	border-top: 1px #cccccc solid;
 }
-
-
-.tail1  a{
+.body2 div li{
+	line-height: 42px;
 	width: 100px;
-	height: 20px;
-	border: 1px solid #2e2e2e;
-	font-size: 15px;
+	height: 42px;
 	float: left;
-	margin-top: 11px;
-	color: white;
+}
+.body2 div a{
+	color: black;
+}
+.body2 div a:hover{
+	color: #7cc484;
+
+}
+.body3{
+	width: 1200px;
+	height: 650px;
+	border: 1px solid white;
+	margin: 57px auto;
+}
+.body3 li{
+	margin: auto;
+	margin-top: 28px;
+	margin-left: 26px;
+	float: left;
+	width: 268px;
+	height: 293px;
+	border: 1px solid black;
 	position: relative;
 }
-.tail1 span{
+.body3 img{
+	height: 100%;
+	width: 100%;
+}
+.body3 li .hidden1{
+	height: 50px;
+	width: 100%;
+	background-color: rgba(33, 33, 33, 0.7);
 	position: absolute;
-	left: 0px;
-}
-.tail2{
-	height: 90px;
-	width: 1200px;
-	border: 1px solid  #2e2e2e;
-	margin-left:80px;
+	bottom: 0px;
 	color: white;
+	font-size: 12px;
 
 }
-.tail2 p{
-	margin-top: 20px;
-	margin-left: 275px;
-	color: #7d7d7d;
-	font-size: 15px;
-}
-.tail2 span{
-	margin-left:10px;
-	margin-right: 10px;
+.hidden1 p{
+	margin-top: 6px;
 
 }
-.tail1 ul li{
-	height: 150px;
-	width: 168px;
-	border: 1px solid  #2e2e2e;
+.body3 li:hover .hidden1{
+	display: none;
+}
+.hidden2{
+	display: none;
+	height: 100%;
+	width: 100%;
+}
+.body3 li:hover .hidden2{
+	position: absolute;
+	bottom: 0px;
+	display: block;
+	background-color: rgba(33, 33, 33, 0.7);
+}
+.hidden2 p{
+	color: white;
+	margin-top: 17px;
+}
+.body4{
+	margin-top: 137px;
+	height: 102px;
+	background-color: #f5f5f5;
+
+}
+.pppp{
+	height: 102px;
+	width: 1200px;
+	margin: 0px auto;
+}
+.body4 li{
+	margin-top:23px ;
 	float: left;
-	margin-left: 56px;
+	width: 284px;
+	height: 50px;
+	border-right: 1px solid #e1e1e1;
+
+}
+.body4 img{
+	float: left;
+	margin-left: 42px;
+}
+.body5{
+	height: 102px;
+	background-color: #323232;
+
+}
+.qqqq{
+	padding-top: 17px;
+	height: 102px;
+	width: 1200px;
+	margin: 0px auto;
+	text-align: center;
+}
+.qqqq a{
+	
+	margin-left: 10px;
+	margin-right: 11px;
+	margin-top: 100px;
+	color: white;
+}
+.qqqq p{
+	margin-top: 17px;
+	color: white;
+}
+.ggg{
+	height: 535px;
+	width: 74px;
+	
+	background-color: #0c110f;
+
+	position: fixed;
+	right: 0px;
+	top: 187px;
+}
+.ggg li{
+	height: 106px;
+	background-color: #0c110f;
+	border-bottom: 1px solid #606260;
+	width:100% ;
+}
+.jjj{
+	margin-right: 100px;
+	width: 60px;
+	height: 100%;
+	margin: 0px auto;
+}
+.ggg img{
+	margin-top: 38px;
+	line-height: 106px;
 }
