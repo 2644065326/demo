@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Picture Carousel</title>
+    <style type="text/css">
+    *{
+        margin:0;
+        padding:0;
+    }
+    a{
+        text-decoration: none;
+    }
+    .Carousel{
+        position: relative;
+        width:1200px;
+        height:400px;
+        margin:50px auto;
+        overflow: hidden;
+        border:10px solid rgba(189, 184, 184,0.5);
+        z-index: 1;
+    }
+    #picture{
+        position: absolute;
+        width: 7200px;
+        height: 400px;
+    }
+    #picture img{
+    	transition: opacity 100s ease-in;
+        float: left;
+        width:1200px;
+        height:400px;
+    }
+    .Carousel .arrow{
+        cursor: pointer;
+        position:absolute;
+        top:40%;
+        padding:10px 15px;
+        background-color: rgba(255, 255, 255,0.8);
+        display: inline-block;
+        font-size: 50px;
+        z-index: 2;
+        color:rgb(161, 157, 157);
+        font-weight: bold;
+        display: none;
+    }
+    .Carousel .arrow_left{
+        left:0;
+    }
+    .Carousel .arrow_right{
+        right: 0;
+    }
+    .Carousel:hover .arrow{
+        display: block;
+    }
+    .Carousel .arrow:hover{
+        background-color: rgb(15, 151, 241);
+        font-weight: bold;
+        color:white;
+    }
+    .check{	
+    	position: absolute;
+    	left:500px ;
+    	bottom: 40px;	
+    }
+    .li{
+    	width: 15px;
+    	height: 15px;
+    	border: 1px solid black;
+    	border-radius: 50%;
+    	float: left;
+    	margin-left: 15px;
+    	background-color:white;
+    	
+    	text-align: center;
+    	font-size: 5px;
+	
+    }
+    .li:hover{
+    	cursor:pointer;
+    } 
+    #ziti{
+    	height: 20px;
+ 		background-color: gray;
+    	position: absolute;
+    	top:20px;
+    	border: 1px solid rgba(189, 184, 184,0.5);
+    	width:100%;
+    	z-index: 1;
+    }
+    .zizi{
+    	position: relative;
+    	width: 1200px;
+    	margin: 0px auto;
+    	background-color: rgba(189, 184, 184,0.5);
+    }
+    #zi{
+    	line-height: 20px;
+    	color: red;
+    	font-size: 1px;
+    	position: absolute;
+    	right: 10px;
+    	z-index: 1;
+
+    }
+    #left{
+    	position: absolute;
+    	float: left;
+		z-index: 2;
+    	height: 20px;
+    	background-color: gray;
+    	width: 300px;  	
+    	
+
+    }
+    #right{
+    	position: absolute;
+    	right: 0px;
+    	float: right;
+    	width: 300px;
+    	height: 20px;
+    	z-index: 2;
+    	background-color: gray;
+
+    }
+    #left img{
+    	margin-left: 285px;
+    }
+
+    </style>
+</head>
+<body>
+	<div id="ziti">
+		<div id="left"><img src="images/a15.png"></div>
+		<div id="right"></div>
+		<div class="zizi">
+			<p id="zi">小心火灾小心诈骗 注意安全</p>
+		</div>
+		
+
+	</div>
+    <div class="Carousel">
+    	
+        <div id="picture">
+            <img src="images/b1.png" alt="">
+            <img src="images/b2.png" alt="">
+            <img src="images/b3.png" alt="">
+            <img src="images/b4.png" alt="">
+            <img src="images/b5.png" alt="">
+            <img src="images/b1.png" alt="">
+        </div>
+        <span  class="arrow arrow_left"><</span>
+        <span  class="arrow arrow_right">></span>
+        <div class="check" >
+	    	<div class="li" id="1">1</div>
+	    	<div class="li" id="2">2</div>
+	    	<div class="li" id="3">3</div>
+	    	<div class="li" id="4">4</div>
+	    	<div class="li" id="5">5</div>
+    	</div>
+
+    </div>
+</body>
+<script type="text/javascript">
+    var pic =document.getElementById('picture');
+    var next = document.querySelector(".arrow_right");
+    var prev = document.querySelector(".arrow_left");
+    var imgwidth=pic.children[0].offsetWidth;
+    var move=0;
+    next.onclick=function(){
+        if(move==pic.children.length-1){
+            move=0;
+            pic.style.left=0+"px";
+
+        }
+        move++;
+        animate(pic,-move*imgwidth,move);
+    }
+    prev.onclick=function(){
+        if(move==0){
+            move=pic.children.length-1;
+            pic.style.left=-move*imgwidth+"px";
+        }
+        move--;
+        animate(pic,-move*imgwidth,move);
+    }
+    var timer = null;
+    var i=0;
+    function autoPlay () {
+    timer = setInterval(function () {
+        next.onclick();
+    },3000);
+    }
+    autoPlay();
+    var Carousel = document.querySelector(".Carousel");
+    Carousel.onmouseenter = function () {
+    clearInterval(timer);
+    }
+    Carousel.onmouseleave = function () {
+    autoPlay();  
+    }
+    function animate(element,distance,move){
+        clearInterval(element.timer);
+        element.timer=setInterval(function(){
+             var present=element.offsetLeft;
+             var speed=parseInt(((move*1200)+present)/10);
+             speed=present<distance?speed:-speed;
+             present+=speed;
+             if(Math.abs(present)>=Math.abs(distance)){
+             	element.style.left=distance+"px";
+             	clearInterval(element.timer);
+             }
+             else{
+             	element.style.left=present-1+"px";
+             }
+        },30);
+    }
+    var li1=document.getElementById("1");
+    var li2=document.getElementById("2");
+    var li3=document.getElementById("3");
+    var li4=document.getElementById("4");
+    var li5=document.getElementById("5");
+
+    li1.onclick=function(){
+    	li1.style.backgroundColor="yellow";
+    	li2.style.backgroundColor="white";
+    	li3.style.backgroundColor="white";
+    	li4.style.backgroundColor="white";
+    	li5.style.backgroundColor="white";
+    	clearInterval(timer);
+    	move=0;
+    	pic.style.left=-move*imgwidth+"px";
+    }
+    li2.onclick=function(){
+    	li1.style.backgroundColor="white";
+    	li2.style.backgroundColor="yellow";
+    	li3.style.backgroundColor="white";
+    	li4.style.backgroundColor="white";
+    	li5.style.backgroundColor="white";
+    	clearInterval(timer);
+    	move=1;
+    	pic.style.left=-move*imgwidth+"px";
+    }
+    li3.onclick=function(){	
+    	li1.style.backgroundColor="white";
+    	li2.style.backgroundColor="white";
+    	li3.style.backgroundColor="yellow";
+    	li4.style.backgroundColor="white";
+    	li5.style.backgroundColor="white";
+    	clearInterval(timer);
+    	move=2;
+    	pic.style.left=-move*imgwidth+"px";	
+    }
+    li4.onclick=function(){
+    	li1.style.backgroundColor="white";
+    	li2.style.backgroundColor="white";
+    	li3.style.backgroundColor="white";
+    	li4.style.backgroundColor="yellow";
+    	li5.style.backgroundColor="white";
+    	clearInterval(timer);
+    	move=3;
+    	pic.style.left=-move*imgwidth+"px";
+    }
+    li5.onclick=function(){	
+    	li1.style.backgroundColor="white";
+    	li2.style.backgroundColor="white";
+    	li3.style.backgroundColor="white";
+    	li4.style.backgroundColor="white";
+    	li5.style.backgroundColor="yellow";
+    	clearInterval(timer);
+    	move=4;
+    	pic.style.left=-move*imgwidth+"px";	
+    }
+    
+    function autoPlay1 () {
+    timer1 = setInterval(function () {
+
+    	var ziti=document.getElementById("ziti");
+    	var zi=document.getElementById("zi");
+    	var persent=zi.offsetLeft;
+    	if(persent<10)
+    	{
+    		persent=1000;
+    		zi.style.right=10+"px";
+
+    	}
+    	var movement=6;
+    	console.log(persent);
+    	persent=persent-movement;
+    	zi.style.left=persent+"px";
+    },50);
+    }
+    autoPlay1();
+</script>
+</html>
+
