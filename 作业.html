@@ -163,6 +163,7 @@
     </div>
 </body>
 <script type="text/javascript">
+
     var pic =document.getElementById('picture');
     var next = document.querySelector(".arrow_right");
     var prev = document.querySelector(".arrow_left");
@@ -200,6 +201,66 @@
     Carousel.onmouseleave = function () {
     autoPlay();  
     }
+    var li1=document.getElementById("1");
+    var li2=document.getElementById("2");
+    var li3=document.getElementById("3");
+    var li4=document.getElementById("4");
+    var li5=document.getElementById("5");
+	li1.onclick=function(){
+		li1.style.backgroundColor="yellow";
+		li2.style.backgroundColor="white";
+		li3.style.backgroundColor="white";
+		li4.style.backgroundColor="white";
+		li5.style.backgroundColor="white";
+		clearInterval(timer);
+		move=0;
+		pic.style.left=-move*imgwidth+"px";
+	
+	}
+	li2.onclick=function(){
+		li1.style.backgroundColor="white";
+		li2.style.backgroundColor="yellow";
+		li3.style.backgroundColor="white";
+		li4.style.backgroundColor="white";
+		li5.style.backgroundColor="white";
+		clearInterval(timer);
+		move=1;
+		pic.style.left=-move*imgwidth+"px";
+		
+	}
+	li3.onclick=function(){	
+		li1.style.backgroundColor="white";
+		li2.style.backgroundColor="white";
+		li3.style.backgroundColor="yellow";
+		li4.style.backgroundColor="white";
+		li5.style.backgroundColor="white";
+		clearInterval(timer);
+		move=2;
+		pic.style.left=-move*imgwidth+"px";	
+		
+	}
+	li4.onclick=function(){
+		li1.style.backgroundColor="white";
+		li2.style.backgroundColor="white";
+		li3.style.backgroundColor="white";
+		li4.style.backgroundColor="yellow";
+		li5.style.backgroundColor="white";
+		clearInterval(timer);
+		move=3;
+		pic.style.left=-move*imgwidth+"px";
+
+	}
+	li5.onclick=function(){	
+		li1.style.backgroundColor="white";
+		li2.style.backgroundColor="white";
+		li3.style.backgroundColor="white";
+		li4.style.backgroundColor="white";
+		li5.style.backgroundColor="yellow";
+		clearInterval(timer);
+		move=4;
+		pic.style.left=-move*imgwidth+"px";	
+	}
+    li1.style.backgroundColor="yellow";
     function animate(element,distance,move){
         clearInterval(element.timer);
         element.timer=setInterval(function(){
@@ -207,72 +268,51 @@
              var speed=parseInt(((move*1200)+present)/10);
              speed=present<distance?speed:-speed;
              present+=speed;
-             if(Math.abs(present)>=Math.abs(distance)){
-             	element.style.left=distance+"px";
-             	clearInterval(element.timer);
+            if(move==1){
+             	li1.style.backgroundColor="white";
+             	li2.style.backgroundColor="yellow";
+				li3.style.backgroundColor="white";
+				li4.style.backgroundColor="white";
+				li5.style.backgroundColor="white";
+             }
+            else if(move==2){
+             	li1.style.backgroundColor="white";
+             	li2.style.backgroundColor="white";
+				li3.style.backgroundColor="yellow";
+				li4.style.backgroundColor="white";
+				li5.style.backgroundColor="white";
+             }
+            else if(move==3){
+             	li1.style.backgroundColor="white";
+             	li2.style.backgroundColor="white";
+				li3.style.backgroundColor="white";
+				li4.style.backgroundColor="yellow";
+				li5.style.backgroundColor="white";
+             }
+            else if(move==4){
+             	li1.style.backgroundColor="white";
+             	li2.style.backgroundColor="white";
+				li3.style.backgroundColor="white";
+				li4.style.backgroundColor="white";
+				li5.style.backgroundColor="yellow";
              }
              else{
-             	element.style.left=present-1+"px";
+             	li1.style.backgroundColor="yellow";
+             	li2.style.backgroundColor="white";
+				li3.style.backgroundColor="white";
+				li4.style.backgroundColor="white";
+				li5.style.backgroundColor="white";
+
              }
+            if(Math.abs(present)>=Math.abs(distance)){
+             	element.style.left=distance+"px";
+             	clearInterval(element.timer);
+            }
+            else{
+             	element.style.left=present-1+"px";
+            }
         },30);
     }
-    var li1=document.getElementById("1");
-    var li2=document.getElementById("2");
-    var li3=document.getElementById("3");
-    var li4=document.getElementById("4");
-    var li5=document.getElementById("5");
-
-    li1.onclick=function(){
-    	li1.style.backgroundColor="yellow";
-    	li2.style.backgroundColor="white";
-    	li3.style.backgroundColor="white";
-    	li4.style.backgroundColor="white";
-    	li5.style.backgroundColor="white";
-    	clearInterval(timer);
-    	move=0;
-    	pic.style.left=-move*imgwidth+"px";
-    }
-    li2.onclick=function(){
-    	li1.style.backgroundColor="white";
-    	li2.style.backgroundColor="yellow";
-    	li3.style.backgroundColor="white";
-    	li4.style.backgroundColor="white";
-    	li5.style.backgroundColor="white";
-    	clearInterval(timer);
-    	move=1;
-    	pic.style.left=-move*imgwidth+"px";
-    }
-    li3.onclick=function(){	
-    	li1.style.backgroundColor="white";
-    	li2.style.backgroundColor="white";
-    	li3.style.backgroundColor="yellow";
-    	li4.style.backgroundColor="white";
-    	li5.style.backgroundColor="white";
-    	clearInterval(timer);
-    	move=2;
-    	pic.style.left=-move*imgwidth+"px";	
-    }
-    li4.onclick=function(){
-    	li1.style.backgroundColor="white";
-    	li2.style.backgroundColor="white";
-    	li3.style.backgroundColor="white";
-    	li4.style.backgroundColor="yellow";
-    	li5.style.backgroundColor="white";
-    	clearInterval(timer);
-    	move=3;
-    	pic.style.left=-move*imgwidth+"px";
-    }
-    li5.onclick=function(){	
-    	li1.style.backgroundColor="white";
-    	li2.style.backgroundColor="white";
-    	li3.style.backgroundColor="white";
-    	li4.style.backgroundColor="white";
-    	li5.style.backgroundColor="yellow";
-    	clearInterval(timer);
-    	move=4;
-    	pic.style.left=-move*imgwidth+"px";	
-    }
-    
     function autoPlay1 () {
     timer1 = setInterval(function () {
 
@@ -283,15 +323,16 @@
     	{
     		persent=1000;
     		zi.style.right=10+"px";
-
+    		
     	}
     	var movement=6;
-    	console.log(persent);
+    	
     	persent=persent-movement;
     	zi.style.left=persent+"px";
     },50);
     }
     autoPlay1();
+
 </script>
 </html>
 
